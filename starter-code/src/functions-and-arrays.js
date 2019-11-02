@@ -36,21 +36,21 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 
 function sumArray (arr) {
-  let newArr;
+  if(!arr) return null;
+  let newArr = 0;
   
-  for(i = 0; i < arr.length; i++){
-      for(j = 1; j < arr.length; j++){
-          arr[i] += arr[j]
+  for(i = 0; i < arr.length; i++)
+     newArr += arr[i] 
       
-          }
-    }
-return arr[0]
+          
+    
+return newArr
 }
 
 
 sumArray(numbers)
 
-/ Iteration #4: Calculate the average
+// Iteration #4: Calculate the average
 function sumArray(arr) {
   let sumNumbers = 0 ;
   
@@ -133,6 +133,22 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
+
+function uniquifyArray (arrWords) {
+  let newArrUniqui = [];
+  for(let elem of arrWords){
+    if(newArrUniqui.indexOf(elem) === -1)newArrUniqui.push(elem)
+   
+   
+       
+  }//end 1 for
+
+ 
+
+return newArrUniqui
+}//end function
+
+uniquifyArray(wordsUnique)
 
 // Iteration #6: Find elements
 const wordsFind = [
