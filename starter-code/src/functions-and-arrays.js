@@ -9,26 +9,31 @@ function maxOfTwoNumbers (num1,num2){
 }
 
 // Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearleeeee', 'orchard', 'crackpot'];
+const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearle', 'orcharde', 'crackpot'];
 
 let longword;
 
-function findLongestWord (arrWords) {
 
- for (i = 0; i < arrWords.length; i++) {
-  for (j = 0; j < arrWords.length; j++) {
-
-   if (arrWords[i].length < arrWords[j].length)
-    longword = arrWords[j]
-
-    }//end for
-  }//end for 2
-    
- return longword
-}//end function
+function findLongestWord(arrOfWords) {
+  if (!arrOfWords.length) return null;
   
+ 
+  let largestWord = arrOfWords[0];
+  
+  for (let word of arrOfWords) {
+    
+    
+    if (word.length > largestWord.length) {
+    
+      largestWord = word;
+    }//end if
+  }//end for
+  return largestWord;
+};
 
-findLongestWord(words)
+// findLongestWord(words)
+
+
 
 // Iteration #3: Calculate the sum
 
@@ -51,28 +56,28 @@ return newArr
 sumArray(numbers)
 
 // Iteration #4: Calculate the average
-function sumArray(arr) {
-  let sumNumbers = 0 ;
+// function sumArray(arr) {
+//   let sumNumbers = 0 ;
   
-  for(i = 0; i < arr.length; i++){
-          sumNumbers += arr[i] 
+//   for(i = 0; i < arr.length; i++){
+//           sumNumbers += arr[i] 
 
-  }
+//   }
         
     
-return sumNumbers
-}
+// return sumNumbers
+// }
+
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 
 
   function averageNumbers(arrNum) {
-    let averageNum = 0;
-     averageNum = sumArray(arrNum)/arrNum.length
-  
-    return averageNum
-  }
+    if(!arrNum.length) return null;
+    else return sumArray(arrNum)/arrNum.length
+   
+  };
 
 averageNumbers(numbersAvg)
 
@@ -106,14 +111,12 @@ function sumArrayWords (arr) {
         }//end first function
 
 function averageWordLength (arrWords){
+ 
+  if(!arrWords.length) return null;
+  else return (sumArrayWords(arrWords)/arrWords.length);
+         
 
-   let averageWords;
 
-         averageWords = sumArrayWords(arrWords)/arrWords.length
-         console.log(averageWords)
-
-
-  return averageWords 
 }//end second function
 
 
@@ -190,6 +193,18 @@ const wordsCount = [
   'matter'
 ];
 
+function howManyTimes (arr, word) {
+  let count = 0;
+
+  for(let el of arr){
+    if(el === word) 
+    count ++
+  }
+return count
+
+}
+
+howManyTimes(wordsCount,"matter")
 // Iteration #8: Bonus
 
 const matrix = [
